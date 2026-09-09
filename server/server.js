@@ -15,10 +15,9 @@ console.log(process.env.MONGO_URI ? true : false);
 
 const allowedOrigins = [
     "http://localhost:5173",
-    "http://localhost:5174",
-    "http://127.0.0.1:5173",
-    "http://127.0.0.1:5174",
+    "https://sentio-ai-rust.vercel.app"
 ].filter(Boolean);
+
 
 app.use(cors({
     origin: (origin, callback) => {
