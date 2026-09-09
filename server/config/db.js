@@ -6,7 +6,6 @@ const connectDB = async () => {
             console.warn("MONGO_URI is not set. Running without MongoDB persistence.");
             return false;
         }
-
         await mongoose.connect(process.env.MONGO_URI);
         console.log("Database connected");
         return true;

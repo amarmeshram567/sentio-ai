@@ -11,6 +11,8 @@ import clerkWebhooks from "./controllers/clerkWebhooks.js";
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+console.log(process.env.MONGO_URI ? true : false);
+
 const allowedOrigins = [
     "http://localhost:5173",
     "http://localhost:5174",
