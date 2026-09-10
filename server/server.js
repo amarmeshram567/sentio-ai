@@ -40,10 +40,6 @@ app.use(clerkMiddleware());
 
 await connectDB();
 
-app.get("/api/protected-route", requireAuth(), (req, res) => {
-    const { userId } = req.auth();
-    res.json({ success: true, message: "Token is valid.", userId });
-});
 
 app.post("/api/webhooks/clerk", clerkWebhooks);
 
