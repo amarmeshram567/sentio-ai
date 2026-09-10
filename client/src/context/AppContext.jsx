@@ -4,7 +4,7 @@ import { useAuth, useUser } from "@clerk/clerk-react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
-axios.defaults.baseURL = import.meta.env.VITE_BACKEND_URL || "https://sentio-ai-rb6y.vercel.app";
+axios.defaults.baseURL = import.meta.env.VITE_BACKEND_URL || "https://sentio-ai-xi.vercel.app";
 
 
 
