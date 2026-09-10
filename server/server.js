@@ -11,24 +11,27 @@ import clerkWebhooks from "./controllers/clerkWebhooks.js";
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-console.log(process.env.MONGO_URI ? true : false);
-
-const allowedOrigins = [
-    "http://localhost:5173",
-    "https://sentio-ai-rust.vercel.app"
-].filter(Boolean);
 
 
-app.use(cors({
-    origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-            return;
-        }
-        callback(new Error("CORS blocked by server"));
-    },
-    credentials: true,
-}));
+// const allowedOrigins = [
+//     "http://localhost:5173",
+//     "https://sentio-ai-rust.vercel.app"
+// ].filter(Boolean);
+
+
+// app.use(cors({
+//     origin: (origin, callback) => {
+//         if (!origin || allowedOrigins.includes(origin)) {
+//             callback(null, true);
+//             return;
+//         }
+//         callback(new Error("CORS blocked by server"));
+//     },
+//     credentials: true,
+// }));
+
+app.use(cors());
+
 
 app.use("/api/webhooks/clerk", express.raw({ type: "application/json" }));
 app.use(express.json({ limit: "10mb" }));
